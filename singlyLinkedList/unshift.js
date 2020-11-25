@@ -10,9 +10,10 @@ class SinglyLinkedList{
         if(!head){
             newNode = this.head;
             this.head = this.tail;
+        } else {
+            newNode.next = this.head
+            newNode = this.head;
         }
-        newNode.next = this.head
-        newNode = this.head;
         this.length++;
         return this;
     }
