@@ -1,3 +1,11 @@
+class Node{
+    constructor(val){
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
 class DoublyLinkedList {
     constructor(){
         this.head = null;
@@ -19,7 +27,7 @@ class DoublyLinkedList {
     } 
     pop(){
         if(!this.head) return undefined;
-        var poppedNode = this.tail;
+        let poppedNode = this.tail;
         if(this.length === 1){
             this.head = null;
             this.tail = null;
