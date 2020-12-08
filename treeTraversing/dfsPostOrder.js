@@ -20,7 +20,7 @@ class BinarySearchTree {
         this.root = null;
     }
 
-    dpsPreOrder(){
+    dfsPreOrder(){
         let finalList = [];
         let current = this.root;
             function traverse(node) {
@@ -32,7 +32,7 @@ class BinarySearchTree {
         return finalList;
     }
 
-    dpsPostOrder(){
+    dfsPostOrder(){
         let finalList = [];
         let current = this.root;
             function traverse(node){
