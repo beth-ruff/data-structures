@@ -18,9 +18,11 @@
         extractMax(){
             let max = this.values[0]
             let end = this.values.pop();
-            this.values[0] = end;
-            //trickle down
-            this.downHeap();
+            if(this.values.length > 0){
+                this.values[0] = end;
+                //trickle down
+                this.downHeap();
+            }
             return max;
         }
 
@@ -39,18 +41,19 @@
                         swap = leftChildIdx;
                     }
                 }
-                if(rightChildIx < length) {
-                    rightChild = this.values[rightChildIdx];
+                if(rightChildIdx < length) {
+                    let rightChild = this.values[rightChildIdx];
                     if(
                         (swap === null && rightChild > element) ||
                         (swap !== null && rightChild > leftChild)
-                        ) {
-                            swap = rightChildIdx;
-                        }
+                    ) {
+                        swap = rightChildIdx;
+                    }
                 }
-
-
                 if(swap === null) break;
+                this.values[idx] = this.values[swap];
+                this.values[swap] = element;
+                idx = swap;
             }
         }
 
