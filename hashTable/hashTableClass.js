@@ -13,4 +13,22 @@ class HashTable {
         }
         return total;
     }
+
+    //hashes the key
+    //stores the key-value pair in the hash table array via separate chaining
+    set(key, value){
+       let index = this._hash(key);
+        if(!this.keyMap[index]){
+            this.keyMap[index] = []
+        }
+        this.keyMap[index].push([key, value]);
+    }
+
+    //hashes the key
+    //retrieves the key-value pair in the hash table
+    //if the key isn't found, returns undefined
+    get(key){
+
+    }
+
 }
