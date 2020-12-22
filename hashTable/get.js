@@ -1,3 +1,7 @@
+//accepts a key
+//hashes the key
+//retrieves the key-value pair in the hash table
+
 class HashTable {
     constructor(size=53){
       this.keyMap = new Array(size);
@@ -13,6 +17,7 @@ class HashTable {
       }
       return total;
     }
+
     set(key,value){
       let index = this._hash(key);
       if(!this.keyMap[index]){
@@ -20,6 +25,7 @@ class HashTable {
       }
       this.keyMap[index].push([key, value]);
     }
+
     get(key){
       let index = this._hash(key);
       if(this.keyMap[index]){

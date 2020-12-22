@@ -1,3 +1,7 @@
+//accepts a key and value
+//hashes the key to get index where it should be stored
+//stores the key-value pair in teh hash table array via separate chaining (creates nested structure)
+
 class HashTable {
     constructor(size=53){
       this.keyMap = new Array(size);
