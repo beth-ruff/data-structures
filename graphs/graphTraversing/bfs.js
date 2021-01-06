@@ -8,7 +8,7 @@
     //loop over each vertex in the adjacency list for the vertex you are visiting
     //if it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
     //once you have finished looping, return the array of visited nodes
-    
+
 class Graph{
     constructor(){
         this.adjacencyList = {};
@@ -38,5 +38,23 @@ class Graph{
             this.removeEdge(vertex, adjacentVertex);
         }
         delete this.adjacencyList[vertex]
+    }
+
+    breadthFirst(start){
+        let queue = [start];
+        let result = [];
+        let visited = {};
+        visited[start] = true;
+        while(queue.length){
+            let currentVertex = queue.shift();
+            result.push(currentVertex);
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            });
+        }
+        return result;
     }
 }
