@@ -48,6 +48,7 @@ class Graph{
         while(queue.length){
             let currentVertex = queue.shift();
             result.push(currentVertex);
+            //to reverse, use .slice().reverse() when looping
             this.adjacencyList[currentVertex].forEach(neighbor => {
                 if(!visited[neighbor]) {
                     visited[neighbor] = true;
