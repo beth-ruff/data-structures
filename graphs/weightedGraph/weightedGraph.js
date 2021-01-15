@@ -1,5 +1,5 @@
 class WeightedGraph {
-    construtor(){
+    constructor(){
         this.adjacencyList = {};
     }
 
